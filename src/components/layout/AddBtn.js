@@ -12,6 +12,7 @@ const AddBtn = () => {
       <ul>
         <li>
           <a
+            // # means id , so #tech-list-modal means it will call a page whose id equals tech-list-modal
             href="#tech-list-modal"
             className="btn-floating green modal-trigger"
           >
