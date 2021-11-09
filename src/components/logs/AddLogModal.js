@@ -18,8 +18,19 @@ const AddLogModal = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
             <label htmlFor="message" className="active">
-                Log Message
+              Log Message
             </label>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="input-field">
+            <select
+              name="tech"
+              value={tech}
+              className="browser-default"
+              onChange={(e) => setTech(e.target.value)}
+            ></select>
           </div>
         </div>
       </div>
