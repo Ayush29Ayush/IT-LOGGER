@@ -30,7 +30,14 @@ const AddLogModal = () => {
               value={tech}
               className="browser-default"
               onChange={(e) => setTech(e.target.value)}
-            ></select>
+            >
+              <option value="" disabled>
+                Select Technician
+              </option>
+              <option value="John A">John A</option>
+              <option value="John B">John B</option>
+              <option value="John C">John C</option>
+            </select>
           </div>
         </div>
       </div>
