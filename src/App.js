@@ -25,7 +25,7 @@ const App = () => {
         <AddLogModal />
         <EditLogModal />
         <AddTechModal />
-        <EditLogModal />
+        <TechListModal />
         <Logs />
       </div>
     </Fragment>
