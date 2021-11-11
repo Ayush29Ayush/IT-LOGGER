@@ -15,7 +15,7 @@ import { GET_LOGS, SET_LOADING, LOGS_ERROR } from "./types";
 //   };
 // };
 
-//! For getLogs plus error handling
+//! For getLogs plus error handling (Get logs from server)
 // this is the short hand notation of writing return async (dispatch) => {
 export const getLogs = () => async (dispatch) => {
   try {
