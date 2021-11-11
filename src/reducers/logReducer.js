@@ -1,4 +1,4 @@
-import { GET_LOGS, SET_LOADING, LOGS_ERROR } from "../actions/types";
+import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG } from "../actions/types";
 
 const initialState = {
   logs: null,
@@ -13,6 +13,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         logs: action.payload,
+        loading: false,
+      };
+    case ADD_LOG:
+      return {
+        ...state,
+        // by maintaining this order i.e ...state.logs, action.payload , first the logs present in the state will be added and after that the new logs from action.payload ( action.payload contains the new logs )
+        logs: [...state.logs, action.payload],
         loading: false,
       };
     case SET_LOADING:
