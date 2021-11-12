@@ -12,8 +12,8 @@ const EditLogModal = ({ current, updateLog }) => {
   useEffect(() => {
     if (current) {
       setMessage(current.message);
-      setMessage(current.attention);
-      setMessage(current.tech);
+      setAttention(current.attention);
+      setTech(current.tech);
     }
   }, [current]);
 
@@ -42,9 +42,9 @@ const EditLogModal = ({ current, updateLog }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor="message" className="active">
+            {/* <label htmlFor="message" className="active">
               Log Message
-            </label>
+            </label> */}
           </div>
         </div>
 
