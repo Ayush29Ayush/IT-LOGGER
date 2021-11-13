@@ -1,5 +1,5 @@
 //! Component to get our Techs List
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import TechItem from "./TechItem";
