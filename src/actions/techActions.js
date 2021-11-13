@@ -8,23 +8,23 @@ import {
 
 //! Get techs from server
 export const getTechs = () => async (dispatch) => {
-    try {
-      setLoading();
-  
-      const res = await fetch("/techs");
-      const data = await res.json();
-  
-      dispatch({
-        type: GET_TECHS,
-        payload: data,
-      });
-    } catch (err) {
-      dispatch({
-        type: TECHS_ERROR,
-        payload: err.response.statusText,
-      });
-    }
-  };
+  try {
+    setLoading();
+
+    const res = await fetch("/techs");
+    const data = await res.json();
+
+    dispatch({
+      type: GET_TECHS,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: err.response.statusText,
+    });
+  }
+};
 
 //! Add technician to server
 export const addTech = (tech) => async (dispatch) => {
@@ -32,11 +32,11 @@ export const addTech = (tech) => async (dispatch) => {
     setLoading();
 
     const res = await fetch("/techs", {
-      method:"POST",
+      method: "POST",
       body: JSON.stringify(tech),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
     const data = await res.json();
 
@@ -51,11 +51,31 @@ export const addTech = (tech) => async (dispatch) => {
     });
   }
 };
-  
+
+//! Delete technicoan from server
+export const deleteTech = (id) => async (dispatch) => {
+  try {
+    setLoading();
+
+    await fetch("/techs", {
+      method: "DELETE",
+    });
+
+    dispatch({
+      type: DELETE_TECH,
+      payload: id,
+    });
+  } catch (err) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: err.response.statusText,
+    });
+  }
+};
 
 //! Set loading to true
 export const setLoading = () => {
-    return {
-      type: SET_LOADING,
-    };
+  return {
+    type: SET_LOADING,
   };
+};
