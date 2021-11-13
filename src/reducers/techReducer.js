@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import {
   GET_TECHS,
   ADD_TECH,
@@ -13,6 +12,7 @@ const initialState = {
   error: null,
 };
 
+// eslint-disable-next-line
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_TECHS:
